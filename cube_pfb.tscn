@@ -1,6 +1,20 @@
 [gd_scene format=3 uid="uid://ci88lb2ogfapm"]
 
 [ext_resource type="Script" uid="uid://bwi5t7r6s53sp" path="res://cube.gd" id="1_jbd7x"]
+[ext_resource type="Texture2D" uid="uid://cw846esy1o5y3" path="res://grass.pyxel" id="1_yxwup"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d2eu5"]
+albedo_texture = ExtResource("1_yxwup")
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h1tbl"]
 
 [node name="Cube" type="CSGBox3D" unique_id=1602146018]
+material = SubResource("StandardMaterial3D_d2eu5")
 script = ExtResource("1_jbd7x")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1404818290]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=519355837]
+shape = SubResource("BoxShape3D_h1tbl")

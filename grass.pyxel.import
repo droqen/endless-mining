@@ -1,0 +1,14 @@
+[remap]
+
+importer="pyxel.unzipped"
+type="PortableCompressedTexture2D"
+uid="uid://cw846esy1o5y3"
+path="res://.godot/imported/grass.pyxel-3df5b320cfeb0f5294a1a96a2c4961a3.res"
+
+[deps]
+
+source_file="res://grass.pyxel"
+dest_files=["res://.godot/imported/grass.pyxel-3df5b320cfeb0f5294a1a96a2c4961a3.res"]
+
+[params]
+
