@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ci4uvyawxuvpe"]
+
+[ext_resource type="Script" uid="uid://c807bn3ji8nlo" path="res://endless_mining_game.gd" id="1_25f34"]
+[ext_resource type="Script" uid="uid://xu2sif3uibxw" path="res://lookaround_camera.gd" id="2_vd6je"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mmeu5"]
+
+[sub_resource type="Sky" id="Sky_ctegy"]
+sky_material = SubResource("ProceduralSkyMaterial_mmeu5")
+
+[sub_resource type="Environment" id="Environment_h1tbl"]
+background_mode = 2
+sky = SubResource("Sky_ctegy")
+
+[node name="endless mining" type="Node3D" unique_id=1901777598]
+script = ExtResource("1_25f34")
+
+[node name="player" type="Node3D" parent="." unique_id=2140749596]
+
+[node name="LookaroundCam" type="Camera3D" parent="player" unique_id=1703960500]
+fov = 60.0
+script = ExtResource("2_vd6je")
+turnspeed_mult = 4.0
+
+[node name="RayCast3D" type="RayCast3D" parent="player/LookaroundCam" unique_id=1015323303]
+target_position = Vector3(0, 0, -5)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1112287144]
+environment = SubResource("Environment_h1tbl")
+
+[node name="cubes" type="Node3D" parent="." unique_id=35444370]
